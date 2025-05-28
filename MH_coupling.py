@@ -23,11 +23,11 @@ def metropolis_step(x, v, U):
     else:
         return x
 
-def metropolis_sampler(x_int, U, v, n_iter):
+def metropolis_sampler(x_int, v, U, n_iter):
     samples = [x_int]
     x = x_int
     for _ in range(n_iter):
-        x = metropolis_step(x,v,U)
+        x = metropolis_step(x, v, U)
         samples.append(x)
     return samples
 
@@ -61,9 +61,9 @@ def MH_coupling_step(x, y, v, U) :
     
     return x, y
 
-def MH_couplig(x_int, y_int, v, U, n_iter):
-    samples = [(x_int, y_int)]
-    x, y = x_int, y_int
+def MH_couplig(x_init, y_init, v, U, n_iter):
+    samples = [(x_init, y_init)]
+    x, y = x_init, y_init
     for _ in range(n_iter):
         x, y = MH_coupling_step(x, y, v, U)
         samples.append(x, y)
