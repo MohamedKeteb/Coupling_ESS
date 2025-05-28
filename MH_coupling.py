@@ -66,7 +66,7 @@ def MH_couplig(x_init, y_init, v, U, n_iter):
     x, y = x_init, y_init
     for _ in range(n_iter):
         x, y = MH_coupling_step(x, y, v, U)
-        samples.append(x, y)
+        samples.append((x, y))
     return samples
 
 
