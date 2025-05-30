@@ -47,10 +47,10 @@ def coupling_gaussian(m1, m2, v):
             y = np.random.normal(m2, v)
             log_w = np.log(np.random.uniform(0,1))
         
-        return x, y 
+        return x, y
 
 
-def MH_coupling_step(x, y, v, U) :
+def MH_coupling_step(x, y, v, U):
     proposal_x, proposal_y = coupling_gaussian(x, y, v) 
 
     log_w = np.log(np.random.uniform(0, 1))
